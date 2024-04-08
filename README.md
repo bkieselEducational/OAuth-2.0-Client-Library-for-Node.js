@@ -74,5 +74,24 @@ module.exports = (sequelize, DataTypes) => {
   return User;
 };
 ```
+### Step 4: Choose or create a new route file for the 2 necessary endpoints for an OAuth flow. (I am using session.js)
+i. Firstly, we must handle any necessary imports within the route file and bring in any environment variables necessary for the flow.<br>
+<br>
+```javascript
+const dotenv = require('dotenv');
+dotenv.config();
+```
+```javascript
+/*  Google AUTH  **********************************************/
 
+const oauthClient = process.env.GOOGLE_OAUTH_CLIENT_ID
+const oauthSecret = process.env.GOOGLE_OAUTH_CLIENT_SECRET
 
+const {OAuth2Client} = require('google-auth-library');
+
+// For the object that shall be returned from OpenID as a JWT payload!
+let claims = {};
+
+/**************************************************************/
+```
+ii.
