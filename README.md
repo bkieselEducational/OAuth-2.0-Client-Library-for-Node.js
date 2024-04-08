@@ -11,7 +11,7 @@ $  npm install google-auth-library
 
 ### Step 3: You will need to alter your Model and Migration files for the User by making the password field NULLable:
 
-* Migration File *
+*Migration File*
 ```javascript
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -40,7 +40,7 @@ module.exports = {
 };
 ```
 
-* Model File *
+*Model File*
 ```javascript
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
