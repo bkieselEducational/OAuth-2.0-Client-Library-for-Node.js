@@ -183,3 +183,8 @@ router.get('/googleOauthCallback', async (req, res) => {
   return res.redirect('http://localhost:5173/'); // Back to the browser!
 });
 ```
+
+### Step 5: And finally, we must create a button in our frontend code that the user can click to initiate the flow!
+```javascript
+  <a href={`${window.origin}/api/session/googleOauthLogin`}><button>OAUTH</button></a>
+```
