@@ -138,8 +138,8 @@ router.get('/googleOauthLogin', async (req, res) => {
     access_type: 'offline', // Forces a Refresh token to be sent!
     scope: 'https://www.googleapis.com/auth/userinfo.profile openid email',
     prompt: 'select_account consent', // select_account is necessary to garauntee that a user is prompted for account selection even when logged in to Google.
-    state: oAuthState.state,
-    nonce: oAuthState.nonce, // PKCE
+    state: oAuthState.state, // CSRF
+    nonce: oAuthState.nonce, // CSRF
     code_challenge_method: 'S256', // PKCE
     code_challenge: codeChallenge  // PKCE
   });
